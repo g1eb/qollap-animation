@@ -16,6 +16,7 @@ var app = {
 
   add: function () {
     var element = document.createElement('div');
+    element.style.background = '#'+Math.random().toString(16).substr(2,6);
     element.classList.add('hidden');
     app.container.appendChild(element);
 
@@ -29,8 +30,10 @@ var app = {
   },
 
   animate: function (element) {
-    var timeout = Math.ceil(Math.random() * 10) * 1000;
+    var timeout = Math.ceil(Math.random() * 15) * 1000;
     window.setTimeout(function (element) {
+      element.classList.toggle('animate');
+      element.style.background = '#'+Math.random().toString(16).substr(2,6);
       app.animate(element);
     }, timeout, element);
   },
