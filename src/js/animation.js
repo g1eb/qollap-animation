@@ -2,6 +2,15 @@
 
 var app = {
 
+  colors: [
+    'rgb(205,35,39)',
+    'rgb(0,175,220)',
+    'rgb(242,112,35)',
+    'rgb(191,205,63)',
+    'rgb(119,73,0)',
+    'rgb(152,0,212)',
+  ],
+
   items: new Array(15),
 
   init: function () {
@@ -16,7 +25,7 @@ var app = {
 
   add: function () {
     var element = document.createElement('div');
-    element.style.background = '#'+Math.random().toString(16).substr(2,6);
+    element.style.background = app.colors[Math.floor(Math.random() * app.colors.length)];
     element.classList.add('hidden');
     app.container.appendChild(element);
 
@@ -33,7 +42,7 @@ var app = {
     var timeout = Math.ceil(Math.random() * 15) * 1000;
     window.setTimeout(function (element) {
       element.classList.toggle('animate');
-      element.style.background = '#'+Math.random().toString(16).substr(2,6);
+      element.style.background = app.colors[Math.floor(Math.random() * app.colors.length)];
       app.animate(element);
     }, timeout, element);
   },
