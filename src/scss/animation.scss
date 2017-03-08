@@ -17,9 +17,9 @@ body {
   width: 150px;
   height: 150px;
   margin: 25px;
-  background: orangered;
   opacity: 1;
   transition: all 1s ease-out;
+  background: transparent;
   will-change: transform, opacity;
 }
 
@@ -34,13 +34,13 @@ body {
 }
 
 .container > div.animate {
-  animation-name: animate;
+  animation-name: pulsate;
   animation-duration: 1s;
-	animation-iteration-count: 1;
+  animation-iteration-count: 1;
   animation-timing-function: ease-out;
 }
 
-@keyframes animate {
+@keyframes pulsate {
   50% {
     transform: scale(1.1);
   }
