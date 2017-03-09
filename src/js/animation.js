@@ -2,13 +2,27 @@
 
 var app = {
 
-  colors: [
-    'rgb(205, 35, 39)',
-    'rgb(0, 175, 220)',
-    'rgb(242, 112, 35)',
-    'rgb(191, 205, 63)',
-    'rgb(152, 0, 212)',
-  ],
+  themes: [{
+    name: 'Stamkracht',
+    color: 'rgb(205, 35, 39)',
+    image: '/dist/img/sk.png',
+  }, {
+    name: 'Qollap',
+    color: 'rgb(0, 175, 220)',
+    image: '/dist/img/qollap.png',
+  }, {
+    name: 'Whatsbizz',
+    color: 'rgb(242, 112, 35)',
+    image: '/dist/img/whatsbizz.png',
+  }, {
+    name: 'The Cloud Company',
+    color: 'rgb(191, 205, 63)',
+    image: '/dist/img/tcc.png',
+  }, {
+    name: 'Dasboard',
+    color: 'rgb(152, 0, 212)',
+    image: '/dist/img/dasboard.png',
+  }],
 
   items: new Array(15),
 
@@ -63,7 +77,7 @@ var app = {
   },
 
   getRandomColor: function () {
-    return app.colors[Math.floor(Math.random() * app.colors.length)];
+    return app.themes[Math.floor(Math.random() * app.themes.length)].color;
   },
 
 };
