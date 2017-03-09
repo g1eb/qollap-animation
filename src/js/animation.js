@@ -44,19 +44,17 @@ var app = {
   add: function () {
     var element = document.createElement('div');
     element.classList.add('hidden');
-    element.addEventListener('mouseover', app.setColor, false);
-    element.addEventListener('mouseout', app.setColor, false);
+    element.addEventListener('mouseover', app.showItem, false);
+    element.addEventListener('mouseout', app.showItem, false);
     element.appendChild(document.createElement('span'));
     element.appendChild(document.createElement('span'));
     app.container.appendChild(element);
 
     var timeout = Math.round(Math.random() * 1000);
-    window.setTimeout(app.show, timeout, element);
-  },
-
-  show: function (element) {
-    element.classList.remove('hidden');
-    app.animate(element);
+    window.setTimeout(function () {
+      element.classList.remove('hidden');
+      app.animate(element);
+    }, timeout, element);
   },
 
   animate: function (element) {
@@ -73,16 +71,17 @@ var app = {
     }, timeout, element);
   },
 
-  setColor: function () {
+  showItem: function () {
+    var theme = app.getRandomTheme();
     if ( this.style.background ) {
       this.style.background = '';
     } else {
-      this.style.background = app.getRandomColor();
+      this.style.background = theme.color;
     }
   },
 
-  getRandomColor: function () {
-    return app.themes[Math.floor(Math.random() * app.themes.length)].color;
+  getRandomTheme: function () {
+    return app.themes[Math.floor(Math.random() * app.themes.length)];
   },
 
 };
