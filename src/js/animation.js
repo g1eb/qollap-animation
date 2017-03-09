@@ -77,8 +77,16 @@ var app = {
     var theme = app.getRandomTheme();
     if ( this.style.background ) {
       this.style.background = '';
+      for ( var i = 0; i < this.children.length; i++ ) {
+        if ( this.children[i].nodeName.toLowerCase() === 'img' ) {
+          this.removeChild(this.children[i]);
+        }
+      }
     } else {
       this.style.background = theme.color;
+      var image = document.createElement('img');
+      image.setAttribute('src', theme.image);
+      this.appendChild(image);
     }
   },
 
