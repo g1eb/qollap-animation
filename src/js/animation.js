@@ -48,12 +48,11 @@ var app = {
     }, timeout, element);
   },
 
-  setColor: function (event) {
-    var element = event.target;
-    if ( element.style.background ) {
-      element.style.background = '';
+  setColor: function () {
+    if ( this.style.background ) {
+      this.style.background = '';
     } else {
-      element.style.background = app.getRandomColor();
+      this.style.background = app.getRandomColor();
     }
   },
 
