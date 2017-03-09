@@ -1,7 +1,6 @@
 body {
   margin: 0;
   padding: 0;
-  background: #111111;
 }
 
 .container {
@@ -58,11 +57,11 @@ body {
   left: 0;
   right: 0;
   background: transparent;
-  border: 1px solid whitesmoke;
 }
 
 .container > div::before {
   transform: rotate(1deg);
+  border: 1px solid rgba(0, 175, 220, 0.5);
 }
 .container > div.animate::before {
   animation-name: rotateBefore;
@@ -84,6 +83,7 @@ body {
 
 .container > div::after {
   transform: rotate(-1deg);
+  border: 1px solid rgba(0, 175, 220, 1);
 }
 .container > div.animate::after {
   animation-name: rotateAfter;
