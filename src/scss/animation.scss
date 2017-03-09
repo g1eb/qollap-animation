@@ -38,10 +38,11 @@ body {
  */
 .container > div {
   flex-shrink: 0;
-  display: inline-block;
+  display: flex;
   width: 150px;
   height: 150px;
   margin: 25px auto;
+  padding: 10px;
   opacity: 1;
   background: transparent;
   transition: all 1s ease-out;
@@ -58,6 +59,10 @@ body {
 .container > div:hover{
   cursor: pointer;
   transform: scale(1.1);
+}
+.container > div > img {
+  align-self: center;
+  max-width: 100%;
 }
 
 /**
