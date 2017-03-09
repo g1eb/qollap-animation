@@ -5,27 +5,27 @@ var app = {
   themes: [{
     name: 'Stamkracht',
     color: 'rgb(205, 35, 39)',
-    image: '/dist/img/stamkracht.png',
+    image: window.location.href + '/dist/img/stamkracht.png',
     link: 'http://www.stamkracht.com/',
   }, {
     name: 'Qollap',
     color: 'rgb(0, 175, 220)',
-    image: '/dist/img/qollap.png',
+    image: window.location.href + '/dist/img/qollap.png',
     link: 'http://www.qollap.com/',
   }, {
     name: 'Whatsbizz',
     color: 'rgb(242, 112, 35)',
-    image: '/dist/img/whatzbiz.png',
+    image: window.location.href + '/dist/img/whatzbiz.png',
     link: 'http://www.whatz.biz/',
   }, {
     name: 'The Cloud Company',
     color: 'rgb(191, 205, 63)',
-    image: '/dist/img/thecloudcompany.png',
+    image: window.location.href + '/dist/img/thecloudcompany.png',
     link: 'http://www.thecloudcompany.nl/',
   }, {
     name: 'Dasboard',
     color: 'rgb(152, 0, 212)',
-    image: '/dist/img/dasboard.png',
+    image: window.location.href + '/dist/img/dasboard.png',
     link: 'http://dasboard.co/',
   }],
 
