@@ -15,8 +15,8 @@ var app = {
   }, {
     name: 'Whatsbizz',
     color: 'rgb(242, 112, 35)',
-    image: '/dist/img/whatsbizz.png',
-    link: 'http://www.qollap.com/',
+    image: '/dist/img/whatzbiz.png',
+    link: 'http://www.whatz.biz/',
   }, {
     name: 'The Cloud Company',
     color: 'rgb(191, 205, 63)',
