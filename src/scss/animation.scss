@@ -1,5 +1,6 @@
 /**
- * Set px to em for media query values.
+ * Utility function to convert pixels to em
+ * (used to convert targets in media queries)
  */
 @function mq-unit($target) {
   @return ($target / 16px) * 1em;
@@ -46,14 +47,14 @@ body {
   transition: all 1s ease-out;
   will-change: transform, opacity;
 
-  @media only screen and (min-width: mq-unit(415px)) { margin: 25px; }
+  @media only screen and (min-width: mq-unit(415px)) {
+    margin: 25px;
+  }
 }
-
 .container > div.hidden {
   transform: scale(1.1);
   opacity: 0;
 }
-
 .container > div:hover{
   cursor: pointer;
   transform: scale(1.1);
