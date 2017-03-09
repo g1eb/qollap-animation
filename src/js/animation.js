@@ -27,6 +27,8 @@ var app = {
     element.classList.add('hidden');
     element.addEventListener('mouseover', app.setColor, false);
     element.addEventListener('mouseout', app.setColor, false);
+    element.appendChild(document.createElement('span'));
+    element.appendChild(document.createElement('span'));
     app.container.appendChild(element);
 
     var timeout = Math.round(Math.random() * 1000);
