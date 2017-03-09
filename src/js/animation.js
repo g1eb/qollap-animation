@@ -25,8 +25,9 @@ var app = {
 
   add: function () {
     var element = document.createElement('div');
-    element.style.background = app.colors[Math.floor(Math.random() * app.colors.length)];
     element.classList.add('hidden');
+    element.addEventListener('mouseover', app.setColor, false);
+    element.addEventListener('mouseout', app.setColor, false);
     app.container.appendChild(element);
 
     var timeout = Math.round(Math.random() * 1000);
@@ -42,9 +43,21 @@ var app = {
     var timeout = Math.ceil(Math.random() * 15) * 1000;
     window.setTimeout(function (element) {
       element.classList.toggle('animate');
-      element.style.background = app.colors[Math.floor(Math.random() * app.colors.length)];
       app.animate(element);
     }, timeout, element);
+  },
+
+  setColor: function (event) {
+    var element = event.target;
+    if ( element.style.background ) {
+      element.style.background = '';
+    } else {
+      element.style.background = app.getRandomColor();
+    }
+  },
+
+  getRandomColor: function () {
+    return app.colors[Math.floor(Math.random() * app.colors.length)];
   },
 
 };
