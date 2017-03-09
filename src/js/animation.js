@@ -75,6 +75,11 @@ var app = {
 
   showItem: function () {
     var theme = app.getRandomTheme();
+
+    var navigate = function () {
+      window.location.href = theme.link;
+    };
+
     if ( this.style.background ) {
       this.style.background = '';
       for ( var i = 0; i < this.children.length; i++ ) {
@@ -82,11 +87,13 @@ var app = {
           this.removeChild(this.children[i]);
         }
       }
+      this.removeEventListener('click', navigate, false);
     } else {
       this.style.background = theme.color;
       var image = document.createElement('img');
       image.setAttribute('src', theme.image);
       this.appendChild(image);
+      this.addEventListener('click', navigate, false);
     }
   },
 
