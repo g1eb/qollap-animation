@@ -41,7 +41,13 @@ var app = {
   },
 
   animate: function (element) {
-    var timeout = Math.ceil(Math.random() * 15) * 1000;
+    var timeout = Math.ceil(Math.random() * 25) * 1000;
+    for ( var i = 0; i < element.children.length; i++ ) {
+      element.children[i].style.transitionDuration = timeout + 'ms';
+      var rotation = Math.round(Math.random()) * 4 - 2;
+      element.children[i].style.transform = 'rotate('+rotation+'deg)';
+    }
+
     window.setTimeout(function (element) {
       element.classList.toggle('animate');
       app.animate(element);
